@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () { //me asegur de q el 
 
     const imagen = document.createElement("img");
     imagen.src = pelicula.poster;
-    imagen.alt = "pelicula.title";
+    imagen.alt = pelicula.title;
 
 
     const titulo = document.createElement("h3");
