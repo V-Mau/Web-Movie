@@ -76,6 +76,7 @@ section h1 {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+  flex-wrap: space-around;
 }
 
 .tarj-peli {
