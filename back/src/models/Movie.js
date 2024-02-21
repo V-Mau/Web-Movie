@@ -23,11 +23,19 @@ const movieSchema =  new mongoose.Schema({
     },
     rate:{
         type: Number,
-        required: true
+        required: true,
+        min: 5,
     },
     poster:{
         type: String,
-        required: true
+        validate: {
+            validator: function (imput){
+                return imput.includes('https://');
+            },
+            message: props => `${props.value} no es una URL válida`
+        }
+        
+
     }
 
     

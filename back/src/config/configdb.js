@@ -1,11 +1,12 @@
-
+console.log(process.env.MONGO_URI);
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const configdb = async () => {
 
     try {
         await mongoose.connect(
-            "mongodb+srv://Mau-vllgs:LL0ofTd7EYDpiZxr@cluster0.moxpic8.mongodb.net/muvies?retryWrites=true&w=majority"
+            process.env.MONGO_URI
         );
         console.log("Conexión exitosa a la base de datos");
        
@@ -15,5 +16,7 @@ const configdb = async () => {
     }
    
 };
+
+configdb();
 
 module.exports = configdb;
