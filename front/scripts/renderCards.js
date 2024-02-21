@@ -1,4 +1,5 @@
 // renderCards.js
+
 async function renderCards (data) {
   try{
     
@@ -43,7 +44,7 @@ async function renderCards (data) {
     
 
           });
-
+   
     
   } catch ( error) {
     alert('Error al obtener datos del servidor')

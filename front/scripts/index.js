@@ -18,7 +18,7 @@ const dataMovies = async () => {
   }
 }
 
-console.log('Versión 1.0.10 - estoy conectado a mi backend');
+// console.log('Versión 1.0.10 - estoy conectado a mi backend');
 
 dataMovies();
 
