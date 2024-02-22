@@ -4,10 +4,10 @@ const cardContainer = document.createElement('div');
 cardContainer.classList.add('container', 'mt-5', 'd-flex', 'justify-content-center', 'align-items-center', 'min-vh-100');
 
 const movieFormCard = document.createElement('div');
-movieFormCard.classList.add('card', 'p-4', 'shadow', 'mb-4', 'w-50', 'bg-dark', 'text-white');
+movieFormCard.classList.add('card', 'p-4', 'shadow', 'mb-4', 'w-50',  'bg-dark', 'text-white');
 
 const movieForm = document.createElement('form');
-movieForm.id = 'movie-form';
+movieForm.id = 'movie-form'; // <---- Agregado 
 
 const titleLabel = document.createElement('label');
 titleLabel.textContent = 'Título de la película';
@@ -39,6 +39,27 @@ directorInput.id = 'Director';
 directorInput.classList.add('form-control', 'mb-3');
 directorInput.required = true;
 
+const genreLabel = document.createElement('label');
+genreLabel.textContent = 'Género';
+
+const genreInput = document.createElement('input');
+genreInput.type = 'text';
+genreInput.name = 'genre';
+genreInput.id = 'genre';
+genreInput.classList.add('form-control', 'mb-3');
+genreInput.required = true;
+
+const rateLabel = document.createElement('label');
+rateLabel.textContent = 'Calificación';
+
+const rateInput = document.createElement('input');
+rateInput.type = 'text';
+rateInput.name = 'Rate';
+rateInput.id = 'Rate';
+rateInput.classList.add('form-control', 'mb-3');
+rateInput.required = true;
+
+
 const posterLabel = document.createElement('label');
 posterLabel.textContent = 'Póster';
 
@@ -48,11 +69,13 @@ posterInput.name = 'Poster';
 posterInput.id = 'Poster';
 posterInput.classList.add('form-control', 'mb-3');
 posterInput.required = true;
-
+// Botones
 const submitButton = document.createElement('button');
 submitButton.type = 'submit';
 submitButton.classList.add('btn', 'btn-primary', 'mr-2');
 submitButton.textContent = 'Enviar';
+
+
 
 const resetButton = document.createElement('button');
 resetButton.type = 'reset';
@@ -63,19 +86,33 @@ resetButton.addEventListener('click', () => {
     titleInput.value = '';
     yearInput.value = '';
     directorInput.value = '';
+    genreInput.value = '';
+    rateInput.value = '';
     posterInput.value = '';
 });
 
 movieForm.appendChild(titleLabel);
 movieForm.appendChild(titleInput);
+
 movieForm.appendChild(yearLabel);
 movieForm.appendChild(yearInput);
+
 movieForm.appendChild(directorLabel);
 movieForm.appendChild(directorInput);
+
+movieForm.appendChild(genreLabel);
+movieForm.appendChild(genreInput);
+
+movieForm.appendChild(rateLabel);
+movieForm.appendChild(rateInput);
+
 movieForm.appendChild(posterLabel);
 movieForm.appendChild(posterInput);
+
 movieForm.appendChild(submitButton);
 movieForm.appendChild(resetButton);
+
+
 
 movieFormCard.appendChild(movieForm);
 cardContainer.appendChild(movieFormCard);
@@ -85,6 +122,13 @@ formContainer.appendChild(cardContainer);
 const moviesContainer = document.createElement('div');
 moviesContainer.classList.add('container', 'mt-4', 'mb-4'); 
 
-formContainer.appendChild(moviesContainer);
+formContainer?formContainer.appendChild(moviesContainer): console.error('No se encontro el contenedor en el DOM');
+
+
+
+
+
+
+
 
 module.exports = movieForm;

@@ -1,4 +1,5 @@
 const renderCards = require('./renderCards');
+const createMovie = require('./createForm');
 const axios = require('axios');
 
 
@@ -18,9 +19,15 @@ const dataMovies = async () => {
   }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  dataMovies();
+  const submit = document.getElementById('submi');
+  submit?.addEventListener('submit', createMovie) 
+  
+});
+
 // console.log('Versión 1.0.10 - estoy conectado a mi backend');
 
-dataMovies();
 
 
 

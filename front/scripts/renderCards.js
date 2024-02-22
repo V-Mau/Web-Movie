@@ -40,7 +40,7 @@ async function renderCards (data) {
       
             tarjeta.appendChild(rate);
       
-            contenedorCartelera.appendChild(tarjeta);
+            contenedorCartelera?.appendChild(tarjeta);
     
 
           });
